@@ -1,0 +1,14 @@
+version: '2'
+
+networks:
+  app-tier:
+    driver: bridge
+
+services:
+  myscore:
+    image: fdsfsrw12/my_image_score
+    container_name: myscore
+    ports:
+      - 5001:5001
+    networks:
+      - app-tier
