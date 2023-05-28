@@ -9,13 +9,11 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'cd /home/ubuntu/devops-experts/project/worldgames'
                 sh 'sudo docker build -t my_score_image .'
             }
         }
         stage('Run') {
             steps {
-                sh 'cd /home/ubuntu/devops-experts/project/worldgames'
                 sh 'sudo docker-compose up -d'
             }
         }
