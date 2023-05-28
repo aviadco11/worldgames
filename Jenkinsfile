@@ -36,11 +36,11 @@ pipeline {
 	      sh 'sudo docker push fdsfsrw12/my_score_image'
 	    }
 	}
-	post {
-    	  always {
-      	    sh 'sudo docker logout'
-          }
-        }
     }
+post {
+  always {
+     sh 'sudo docker logout'
+     }
+ }
 }
 
