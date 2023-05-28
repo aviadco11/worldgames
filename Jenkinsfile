@@ -21,7 +21,7 @@ pipeline {
             steps {
                 sh 'sudo rm -rf /tmp/.X1 -R'
                 sh 'sudo rm -rf /tmp/.X11-unix/X1 -R'
-                sh 'pip install requirements.txt'
+                sh 'pip3 install requirements.txt'
                 wrap([$class: 'Xvfb']) {
                 sh 'python3 e2e.py'
                 }
