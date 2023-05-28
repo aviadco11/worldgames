@@ -20,7 +20,6 @@ pipeline {
         stage('Test') {
             steps {
                 wrap([$class: 'Xvfb'])
-                sh 'cd /home/ubuntu/devops-experts/project/worldgames'
                 sh 'python3 e2e.py'
             }
         }
