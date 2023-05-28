@@ -6,11 +6,15 @@ networks:
 
 services:
   myscore:
-    image: fdsfsrw12/my_image_score
+    image: my_score_image
     container_name: myscore
     ports:
       - 8777:5001
-    volumes:
-      - ./Scores.txt:/app/Scores.txt       
+        #volumes:
+        # - ./Scores.txt:/app/Scores.txt       
     networks:
       - app-tier
+
+volumes:
+  myscore:
+    driver: local
