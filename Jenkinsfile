@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+    
+    environment {
+      DOCKERHUB_CREDENTIALS= credentials('dockerhub')	
+    }
     stages {
         stage('Checkout') {
             steps {
@@ -26,6 +29,13 @@ pipeline {
                 }
             }
         }
+        stage('Finalize') {
+            steps {
+	      sh 'echo $DOCKERHUB_CREDENTIALS_PSW | sudo docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+              sh 'sudo docker tag my_score_image fdsfsrw12/my_score_image'
+	      sh 'sudo docker push fdsfsrw12/my_score_image'
+	    }
+	}
     }
 }
 
