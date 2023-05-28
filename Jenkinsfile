@@ -24,8 +24,8 @@ pipeline {
             steps {
                 sh 'sudo rm -rf /tmp/ -R'
                 sh 'pip install --disable-pip-version-check -r requirements.txt'
-		#wrap([$class: 'Xvfb']) {
-                
+		wrap([$class: 'Xvfb']) {
+                sh 'echo pass'
                 }
             }
         }
