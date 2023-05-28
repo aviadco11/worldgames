@@ -15,9 +15,11 @@ def test_scores_service(url):
 
 def main_function():
     if test_scores_service(Utils.URL_TEST):
+        print("score between 1 to 1000")
         return 0
     else:
+        print("score not in the range 1..1000")
         return -1
 
 
-
+main_function()
