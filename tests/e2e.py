@@ -4,7 +4,7 @@ import Utils
 
 
 def test_scores_service(url):
-    driver = webdriver.Chrome(ChromeDriverManager().install())
+    driver = webdriver.Firefox()
     driver.get(url)
     score = driver.find_element(by="id", value="score")
     if 1 <= int(score.text) <= 1000:
