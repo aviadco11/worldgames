@@ -13,7 +13,7 @@ def test_scores_service(url):
 
 
 def main_function():
-    if test_scores_service(Utils.URL_TEST):
+    if test_scores_service("http://127.0.0.1:8777/"):
         print("score between 1 to 1000")
         return 0
     else:
