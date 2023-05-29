@@ -1,7 +1,8 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
+import os
+sys.path.append(os.path.abspath("/app"))
 from Utils import *
-
 
 def test_scores_service(url):
     driver = webdriver.Firefox()
