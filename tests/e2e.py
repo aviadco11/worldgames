@@ -1,6 +1,9 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
+import sys
 
+sys.path.append('./')
+import Utils
 
 def test_scores_service(url):
     driver = webdriver.Firefox()
@@ -13,7 +16,7 @@ def test_scores_service(url):
 
 
 def main_function():
-    if test_scores_service("http://127.0.0.1:8777/"):
+    if test_scores_service(Utils.URL_TEST):
         print("score between 1 to 1000")
         return 0
     else:
