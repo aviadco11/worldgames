@@ -1,6 +1,6 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
-import Utils
+import ../Utils
 
 
 def test_scores_service(url):
