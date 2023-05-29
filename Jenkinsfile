@@ -23,7 +23,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'sudo rm -rf /tmp/ -R'
-                sh 'pip install --disable-pip-version-check -r requirements.txt'
+                sh 'pip3 install --disable-pip-version-check -r requirements.txt'
 		wrap([$class: 'Xvfb']) {
                 sh 'python3 tests/e2e.py'
                 }
